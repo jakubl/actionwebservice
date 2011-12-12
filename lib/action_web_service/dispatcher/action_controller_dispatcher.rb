@@ -153,7 +153,8 @@ module ActionWebService # :nodoc:
           when "GET" || :get
             begin
               options = { :type => 'text/xml', :disposition => 'inline' }
-              send_data(to_wsdl, options)
+              #send_data(to_wsdl, options)
+              render :text => to_wsdl
             rescue Exception => e
               Rails.logger.error(e) unless logger.nil?
             end
